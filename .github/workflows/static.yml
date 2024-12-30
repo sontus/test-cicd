@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.1.5
+        with:
+          server: ftp.sachiangandham.com
+          username: ci@erp.iosoft.com.bd
+          password: N9kf=;Ve@=Z#
+          server-dir: /home/sachhhid/erp.iosoft.com.bd
+      
+ 
